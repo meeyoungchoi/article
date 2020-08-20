@@ -1,0 +1,11 @@
+
+spring:
+  # db 설정
+  h2:
+    console:
+      enabled: true
+  # jpa 설정
+  jpa:
+    show-sql: true # jpa 동작 시 내부 sql 출력
+    properties:
+      hibernate.format_sql: true # 보기 좋게 출력!

@@ -1,6 +1,6 @@
 package com.example.article.form;
 
-import com.example.article.vo.Article;
+import com.example.article.entity.Article;
 import lombok.Data;
 
 import javax.persistence.GeneratedValue;

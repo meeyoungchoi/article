@@ -1,8 +1,12 @@
 package com.example.article.controller;
 
+import com.example.article.entity.Comment;
 import com.example.article.form.ArticleForm;
+import com.example.article.form.CommentForm;
 import com.example.article.repository.ArticleRepository;
-import com.example.article.vo.Article;
+import com.example.article.entity.Article;
+import com.example.article.repository.CommentRepository;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,10 +18,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Slf4j
+@RequiredArgsConstructor
 @Controller
 public class ArticleController {
     @Autowired
     private ArticleRepository articleRepository;
+
+    private final CommentRepository commentRepository;
 
     @GetMapping("/article/new")
     public String newArticle() {
@@ -79,4 +86,6 @@ public class ArticleController {
         log.info(id + "번글 삭제");
         return "redirect:/";
     }
+
+
 }
