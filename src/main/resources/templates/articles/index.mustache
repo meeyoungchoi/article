@@ -1,0 +1,40 @@
+{{>layout/header}}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Article 목록</h1>
+            <a href="/article/new" class="btn btn-lg btn-primary">글추가</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <table class="table text-center">
+            <thead>
+                   <tr>
+                       <th>#</th>
+                       <th>title</th>
+                   </tr>
+            </thead>
+            <tbody>
+            {{#articles}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>
+                        <a href="/article/show/{{id}}">{{title}}</a>
+                    </td>
+                    <td>
+                        <a href="/article/edit/{{id}}" class="btn btn-info">수정</a>
+                    </td>
+                    <td>
+                        <a href="/article/delete/{{id}}" class="btn btn-danger">삭제</a>
+                    </td>
+                </tr>
+            {{/articles}}
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+
+{{>layout/footer}}
